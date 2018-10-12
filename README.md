@@ -1,7 +1,6 @@
 
-=====================================
-     ORDERS MANIPULATION PROGRAM    
-=====================================
+     ORDERS MANIPULATION PROGRAM   
+     
 
 1) Description:
 	It is a program, which allows  manipulate a list of orders, 
