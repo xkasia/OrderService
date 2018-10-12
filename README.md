@@ -6,14 +6,14 @@
 	It is a program, which allows  manipulate a list of orders, 
 	which should be put as program arguments and letting easy retrieve a lot of information
 	about given orders with various type of reports.
-	The user can put csv and xml files as arguments. Each file should contain at least 1 order. 
+	The user can pass csv or xml files as arguments. Each file should contain at least 1 order. 
 
  	Each order require 5 necessary elements:
 	1.	ClientId – alphanumeric, without spaces, no longer than 6 characters,
 	2.	RequestId – numeric, long type
 	3.	Name – alphanumeric, with spaces, no longer than 255 characters,
 	4.	Quantity – numeric, int type 
-	5.	e. Price – numeric floating point double-precision
+	5.	Price – numeric floating point double-precision
 	
 	Program informs what is wrong if some file or specific order in a file has wrong format
 	and then loads proper orders to in memory database.
