@@ -30,7 +30,7 @@ public class ReportListOfOrdersForClientWithSpecifiedID extends Report {
         }
 
         StringBuilder listAsSting = new StringBuilder();
-        listAsSting.append("Client_Id,Request_id,Name,Quantity,Price");
+        listAsSting.append("Client_Id,Request_id,Name,Quantity,Price\n");
 
         if ((result = DB.executeSQL("SELECT * FROM ORDERS_DATABASE"
                 + " WHERE CLIENT_ID = '" + clientID + "'")) == null) {
