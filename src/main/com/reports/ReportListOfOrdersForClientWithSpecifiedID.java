@@ -20,7 +20,7 @@ public class ReportListOfOrdersForClientWithSpecifiedID extends Report {
      * @return the String representation of report.
      */
     @Override
-    public String generateRaport(DataBaseConnector DB) {
+    public String generateReport(DataBaseConnector DB) {
 
         ResultSet result;
 
@@ -30,7 +30,7 @@ public class ReportListOfOrdersForClientWithSpecifiedID extends Report {
         }
 
         StringBuilder listAsSting = new StringBuilder();
-        listAsSting.append("Client_Id,Request_id,Name,Quantity,Price\n");
+        listAsSting.append("Client_Id,Request_id,Name,Quantity,Price\r\n");
 
         if ((result = DB.executeSQL("SELECT * FROM ORDERS_DATABASE"
                 + " WHERE CLIENT_ID = '" + clientID + "'")) == null) {
@@ -43,10 +43,10 @@ public class ReportListOfOrdersForClientWithSpecifiedID extends Report {
                 listAsSting.append(DB.getResultSet()
                         .getString("CLIENT_ID")
                         + ", "
-                        + result.getString("REQUEST_ID") + ", "
+                        + result.getString("REQUEST_ID") + ","
                         + result.getString("NAME") + ", "
-                        + result.getString("QUANTITY") + ", "
-                        + result.getString("PRICE") + " \n");
+                        + result.getString("QUANTITY") + ","
+                        + result.getString("PRICE") + "\r\n");
             }
         } catch (SQLException e) {
             if (Main.DEBUG) {

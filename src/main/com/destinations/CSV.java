@@ -1,5 +1,6 @@
 package destinations;
 
+import com.opencsv.CSVWriter;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import service.Main;
@@ -23,12 +24,8 @@ public class CSV extends Destination {
         String fileName;
         int counterOfFiles = 1;
 
-        final String NEW_LINE_SEPARATOR = "\n";
         File file;
         FileWriter fileWriter = null;
-        CSVPrinter csvFilePrinter = null;
-        CSVFormat csvFileFormat = CSVFormat.DEFAULT.withRecordSeparator(NEW_LINE_SEPARATOR);
-
         while (true) {
             fileName = "createdFileCsv" + counterOfFiles + ".csv";
             file = new File(fileName);
@@ -41,8 +38,7 @@ public class CSV extends Destination {
         }
         try {
             fileWriter = new FileWriter(file);
-            csvFilePrinter = new CSVPrinter(fileWriter, csvFileFormat);
-            csvFilePrinter.printRecord(report);
+            fileWriter.write(report);
             System.out.println("\nCSV file " + fileName
                     + " was created successfully.");
         } catch (IOException e) {
@@ -55,7 +51,6 @@ public class CSV extends Destination {
             try {
                 fileWriter.flush();
                 fileWriter.close();
-                csvFilePrinter.close();
             } catch (IOException e) {
                 if (Main.DEBUG) {
                     e.printStackTrace();

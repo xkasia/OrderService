@@ -20,7 +20,7 @@ public class ReportNumOfOrdersForClientWithSpecifiedID extends Report {
      * @return the String representation of report.
      */
     @Override
-    public String generateRaport(DataBaseConnector DB) {
+    public String generateReport(DataBaseConnector DB) {
 
         ResultSet result;
         int numberOfOrders;

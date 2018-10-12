@@ -16,7 +16,7 @@ public class ReportAverageOrderVal extends Report {
      * @return the String representation of report.
      */
     @Override
-    public String generateRaport(final DataBaseConnector DB) {
+    public String generateReport(final DataBaseConnector DB) {
 
         ResultSet result;
         double averageValue;

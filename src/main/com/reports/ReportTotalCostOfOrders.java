@@ -15,7 +15,7 @@ public class ReportTotalCostOfOrders extends Report {
      * @param DB is database handler, which we are using to connect to database.
      * @return the String representation of report.
      */
-    public String generateRaport(DataBaseConnector DB) {
+    public String generateReport(DataBaseConnector DB) {
 
         ResultSet result;
         double totalCostOfOrders;

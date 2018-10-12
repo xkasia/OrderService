@@ -21,7 +21,7 @@ public class ReportTotalCostOfOrdersForClientWithSpecifiedID extends Report {
      * @return the String representation of report.
      */
     @Override
-    public String generateRaport(DataBaseConnector DB) {
+    public String generateReport(DataBaseConnector DB) {
         ResultSet result;
         double totalCostOfOrders;
 

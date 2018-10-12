@@ -20,5 +20,5 @@ abstract public class Report {
      * @param DB is database handler, which we are using to connect to database.
      * @return the String representation of report.
      */
-    public abstract String generateRaport(DataBaseConnector DB);
+    public abstract String generateReport(DataBaseConnector DB);
 }

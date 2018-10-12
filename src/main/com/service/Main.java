@@ -72,7 +72,7 @@ public class Main {
 
             ReportGenerator generator = new ReportGenerator(options);
             Report raport = generator.generateReport();
-            ReportPutToDestination.callReport(raport.generateRaport(DB),
+            ReportPutToDestination.callReport(raport.generateReport(DB),
                     options.getDestination());
         }
 

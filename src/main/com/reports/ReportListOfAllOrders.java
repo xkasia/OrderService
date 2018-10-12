@@ -15,13 +15,12 @@ public class ReportListOfAllOrders extends Report {
      * @return the String representation of report.
      */
     @Override
-    public String generateRaport(DataBaseConnector DB) {
+    public String generateReport(DataBaseConnector DB) {
 
         ResultSet result;
 
         StringBuilder listAsSting = new StringBuilder();
-        listAsSting.append("Client_Id,Request_id,Name,Quantity,Price\n");
-
+        listAsSting.append("Client_Id,Request_id,Name,Quantity,Price\n\r");
         if ((result = DB.executeSQL("SELECT * FROM ORDERS_DATABASE")) == null) {
             System.out.println("\n#WARNING: SQL query is not valid.\n");
             return null;
@@ -34,7 +33,7 @@ public class ReportListOfAllOrders extends Report {
                         + result.getString("REQUEST_ID") + ", "
                         + result.getString("NAME") + ", "
                         + result.getString("QUANTITY") + ", "
-                        + result.getString("PRICE") + " \n");
+                        + result.getString("PRICE") + " \n\r");
             }
         } catch (SQLException e) {
             if (Main.DEBUG) {
