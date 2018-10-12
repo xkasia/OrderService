@@ -20,8 +20,7 @@ public class ReportListOfAllOrders extends Report {
         ResultSet result;
 
         StringBuilder listAsSting = new StringBuilder();
-        listAsSting.append("The list of all orders:"
-                + "\nClient_Id,Request_id,Name,Quantity,Price\n");
+        listAsSting.append("Client_Id,Request_id,Name,Quantity,Price");
 
         if ((result = DB.executeSQL("SELECT * FROM ORDERS_DATABASE")) == null) {
             System.out.println("\n#WARNING: SQL query is not valid.\n");
